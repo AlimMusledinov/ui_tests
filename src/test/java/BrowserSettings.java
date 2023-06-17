@@ -18,6 +18,7 @@ public class BrowserSettings {
         //Configuration.browser = "edge";
         //Configuration.browser="firefox";
         ChromeOptions options = new ChromeOptions();
+        System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
         options.setBinary("src\\test\\resources\\chromedriver.exe");
         options.addArguments("--disable-extensions");
         options.addArguments("start-maximized");
