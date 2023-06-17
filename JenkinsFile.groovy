@@ -34,7 +34,7 @@ def getTestStages(testTags) {
     def stages = [:]
     testTags.each { tag ->
         stages["${tag}"] = {
-            sh 'mvn clean package -DskipTests -Dartifactory.login=$LOGIN -Dartifactory.password=$PASS -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true'
+            sh 'mvn clean test'
         }
     }
     return stages
