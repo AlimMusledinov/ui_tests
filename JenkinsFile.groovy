@@ -1,7 +1,7 @@
 task_branch = "${TEST_BRANCH_NAME}"
 def branch_cutted = task_branch.contains("origin") ? task_branch.split('/')[1] : task_branch.trim()
 currentBuild.displayName = "$branch_cutted"
-base_git_url = "https://gitlab.com/epickonfetka/cicd-threadqa.git"
+base_git_url = "https://github.com/AlimMusledinov/ui_tests.git"
 
 
 node {
@@ -34,7 +34,7 @@ def getTestStages(testTags) {
     def stages = [:]
     testTags.each { tag ->
         stages["${tag}"] = {
-            sh 'mvn clean test'
+            runTestWithTag(tag)
         }
     }
     return stages
@@ -43,7 +43,7 @@ def getTestStages(testTags) {
 
 def runTestWithTag(String tag) {
     try {
-        labelledShell(label: "Run ${tag}", script: "chmod +x gradlew \n./gradlew -x test ${tag}")
+        sh 'mvn clean test'
     } finally {
         echo "some failed tests"
     }
@@ -68,5 +68,4 @@ def generateAllure() {
             results          : [[path: 'target/allure-results']]
     ])
 }
-
 
