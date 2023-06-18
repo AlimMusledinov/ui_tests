@@ -14,7 +14,6 @@ public class BrowserSettings {
 
     public void startBrowser() {
 
-        //Configuration.browser="opera";
         //Configuration.browser = "edge";
         //Configuration.browser="firefox";
         WebDriverManager.chromedriver().driverVersion("85").setup();
@@ -23,10 +22,19 @@ public class BrowserSettings {
         System.setProperty("selenide.browser","chrome");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("selenide.browser", "chrome");
+        options.addArguments("start-maximized");
+        options.addArguments("disable-infobars");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--user-data-dir=~/.config/google-chrome");
+
+
+        options.setExperimentalOption("useAutomationExtension", false);
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-
-        Configuration.headless = true;
         Configuration.timeout = 6000;
         Configuration.browser = "chrome";
         Configuration.browserCapabilities = capabilities;
