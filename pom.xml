@@ -100,7 +100,7 @@
                 <configuration>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-
+                        -Dselenide.headless=true
                     </argLine>
                 </configuration>
                 <dependencies>
