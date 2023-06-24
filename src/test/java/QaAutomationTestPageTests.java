@@ -1,11 +1,12 @@
-import io.qameta.allure.Description;
+import io.qameta.allure.*;
 
-import io.qameta.allure.Step;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-
+@ApiiApi("ApiiApi")
+@Apiii("Api")
+@Tag("Тэг")
+@Epic("Эпик")
+@DisplayName("Описание")
 public class QaAutomationTestPageTests extends BrowserSettings {
 
     public final String page = "https://docs.google.com/forms/d/1dgFKz9AD32hq326wnGaeFw6YccoNuzxwdVPFVb4UeXE/viewform?edit_requested=true";
@@ -23,6 +24,8 @@ public class QaAutomationTestPageTests extends BrowserSettings {
         System.out.println("test");
     }
 
+
+    @AllureId("0000001")
     @Test
     @Description("Проверка формы ")
     public void test() throws InterruptedException {

@@ -18,17 +18,17 @@ public class BrowserSettings {
         //Configuration.browser="firefox";
         WebDriverManager.chromedriver().driverVersion("85").setup();
         System.setProperty("chromeoptions.args", "--no-sandbox");
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Al2\\IdeaProjects\\ui_tests\\src\\test\\resources\\chromedriver.exe");
-        System.setProperty("selenide.browser","chrome");
+        System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("selenide.browser", "chrome");
         options.addArguments("start-maximized");
         options.addArguments("disable-infobars");
         options.addArguments("--disable-extensions");
         options.addArguments("--disable-gpu");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
-        options.addArguments("--user-data-dir=~/.config/google-chrome");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--ignore-ssl-errors=yes");
+        options.addArguments("--ignore-certificate-errors");
 
 
         options.setExperimentalOption("useAutomationExtension", false);

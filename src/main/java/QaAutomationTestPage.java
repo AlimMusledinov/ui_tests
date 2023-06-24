@@ -1,9 +1,10 @@
 import io.qameta.allure.Step;
+
 import org.junit.jupiter.api.Assertions;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-
+import org.openqa.selenium.support.FindBy;
 
 
 import static com.codeborne.selenide.Condition.visible;
@@ -14,9 +15,11 @@ import static com.codeborne.selenide.Selenide.$x;
 
 
 public class QaAutomationTestPage {
-
+    @FindBy(using = "formName")
     SelenideElement formPage = $x("//form");
 
+
+    @FindBy(using = "emailFieldName")
     SelenideElement emailField = $x("//input[@type='email']");
     ElementsCollection radioButtonList = $$x("//*[contains(@class,'RadioRadio')]");
     SelenideElement dateField = $x("//input[@type='date']");
@@ -85,6 +88,7 @@ public class QaAutomationTestPage {
 
     @Step("Нажимаем на кнопку '{buttonName}'")
     public QaAutomationTestPage clickButton(String buttonName) throws InterruptedException {
+        getClass().getDeclaredFields();
         switch (buttonName) {
             case "Отправить": {
                 sendButton.scrollTo().click();
