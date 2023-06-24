@@ -10,6 +10,8 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
+
 public class BrowserSettings {
 
     public void startBrowser() {
@@ -19,7 +21,9 @@ public class BrowserSettings {
         WebDriverManager.chromedriver().driverVersion("85").setup();
         System.setProperty("chromeoptions.args", "--no-sandbox");
         System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
+
         ChromeOptions options = new ChromeOptions();
+        options.setBinary(new File("src\\test\\resources\\chromedriver.exe"));
         options.addArguments("start-maximized");
         options.addArguments("disable-infobars");
         options.addArguments("--disable-extensions");
