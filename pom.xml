@@ -101,6 +101,8 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         -Dselenide.headless=true
+                        -Dselenide.ignore-ssl-errors=yes
+                        -Dselenide.disable-dev-shm-usage=yes
                     </argLine>
                 </configuration>
                 <dependencies>
