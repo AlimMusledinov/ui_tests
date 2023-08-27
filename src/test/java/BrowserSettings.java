@@ -16,33 +16,14 @@ public class BrowserSettings {
 
     public void startBrowser() {
 
-        //Configuration.browser = "edge";
-        //Configuration.browser="firefox";
-        WebDriverManager.chromedriver().driverVersion("85").setup();
-        System.setProperty("chromeoptions.args", "--no-sandbox");
-        System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
 
-        ChromeOptions options = new ChromeOptions();
-        options.setBinary(new File("src\\test\\resources\\chromedriver.exe"));
-        options.addArguments("start-maximized");
-        options.addArguments("disable-infobars");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--ignore-ssl-errors=yes");
-        options.addArguments("--ignore-certificate-errors");
-
-
-        options.setExperimentalOption("useAutomationExtension", false);
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        Configuration.timeout = 6000;
+        Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "chrome";
-        Configuration.browserCapabilities = capabilities;
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
+        Configuration.browserSize = "1920x1080";
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+        desiredCapabilities.setCapability("enableVNC", true);
+        // desiredCapabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = desiredCapabilities;
     }
 
 }
