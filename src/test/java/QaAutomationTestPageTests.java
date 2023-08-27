@@ -17,7 +17,9 @@ public class QaAutomationTestPageTests extends BrowserSettings {
         new QaAutomationTestPage()
                 .openPage(page)
 
-                .clickButton("Отправить");
+                .fillField("Электронная почта",eMail);
+
+        Thread.sleep(20000);
 
     }
 }
