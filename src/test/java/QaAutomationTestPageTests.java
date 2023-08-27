@@ -2,8 +2,6 @@ import io.qameta.allure.*;
 
 import org.junit.jupiter.api.*;
 
-@ApiiApi("ApiiApi")
-@Apiii("Api")
 @Tag("Тэг")
 @Epic("Эпик")
 @DisplayName("Описание")
