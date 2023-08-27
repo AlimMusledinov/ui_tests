@@ -27,6 +27,8 @@
         <com.fasterxml.jackson.version>2.15.2</com.fasterxml.jackson.version>
         <com.fasterxml.jackson.version>2.15.2</com.fasterxml.jackson.version>
         <ch.qos.logback.version>1.1.1</ch.qos.logback.version>
+        <org.postgresql.version>42.6.0</org.postgresql.version>
+        <org.awaitility.version>4.2.0</org.awaitility.version>
     </properties>
 
     <dependencies>
@@ -61,6 +63,27 @@
             <version>${com.squareup.retrofit2.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>net.lightbody.bmp</groupId>-->
+        <!--            <artifactId>browsermob-core</artifactId>-->
+        <!--            <version>2.1.5</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.browserup</groupId>-->
+        <!--            <artifactId>browserup-proxy-core</artifactId>-->
+        <!--            <version>2.1.2</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>72.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${org.projectlombok.version}</version>
@@ -88,6 +111,11 @@
             <version>${junit.platform.version}</version>
         </dependency>
         <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${ch.qos.logback.version}</version>
+        </dependency>
+        <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>${qameta.allure.version}</version>
@@ -97,6 +125,12 @@
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
             <version>${com.codeborne.selenide.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>${qameta.allure.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -114,6 +148,11 @@
             <version>${com.fasterxml.jackson.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>${org.mybatis.version}</version>
@@ -124,9 +163,14 @@
             <version>${org.apache.kafka.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.qameta.atlas</groupId>
-            <artifactId>atlas-webdriver</artifactId>
-            <version>1.9.2</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${org.postgresql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>${org.awaitility.version}</version>
         </dependency>
     </dependencies>
 
