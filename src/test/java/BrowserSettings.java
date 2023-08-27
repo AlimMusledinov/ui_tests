@@ -14,16 +14,15 @@ import java.io.File;
 
 public class BrowserSettings {
 
-    public void startBrowser() {
-
-
-        Configuration.remote = "http://localhost:4444/";
+    public BrowserSettings() {
+        Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("enableVNC", true);
         // desiredCapabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = desiredCapabilities;
+
     }
 
 }

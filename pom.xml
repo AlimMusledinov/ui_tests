@@ -9,65 +9,123 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <junit.jupiter.version>5.9.3</junit.jupiter.version>
-        <qameta.allure>2.22.2</qameta.allure>
+        <junit.jupiter.version>5.8.2</junit.jupiter.version>
+        <junit.platform.version>1.9.2</junit.platform.version>
+        <com.codeborne.selenide.version>6.12.3</com.codeborne.selenide.version>
+        <allure.version>2.17.3</allure.version>
+        <qameta.allure.version>2.13.1</qameta.allure.version>
+        <qameta.allure.allure-selenide.version>2.22.1</qameta.allure.allure-selenide.version>
+        <allure-okhttp3.version>2.17.3</allure-okhttp3.version>
         <aspectj.version>1.9.4</aspectj.version>
-        <allure.version>2.22.2</allure.version>
-
+        <okhttp.version>4.9.3</okhttp.version>
+        <org.projectlombok.version>1.18.28</org.projectlombok.version>
+        <com.google.code.gson.version>2.9.0</com.google.code.gson.version>
+        <org.hamcrest.version>2.2</org.hamcrest.version>
+        <com.squareup.retrofit2.version>2.9.0</com.squareup.retrofit2.version>
+        <org.mybatis.version>3.5.13</org.mybatis.version>
+        <org.apache.kafka.version>3.4.1</org.apache.kafka.version>
+        <com.fasterxml.jackson.version>2.15.2</com.fasterxml.jackson.version>
+        <com.fasterxml.jackson.version>2.15.2</com.fasterxml.jackson.version>
+        <ch.qos.logback.version>1.1.1</ch.qos.logback.version>
     </properties>
 
-
     <dependencies>
-
-        <!-- Test API(s) -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-okhttp3</artifactId>
+            <version>${allure-okhttp3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${com.google.code.gson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${org.hamcrest.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>retrofit</artifactId>
+            <version>${com.squareup.retrofit2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-jackson</artifactId>
+            <version>${com.squareup.retrofit2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.jupiter.version}</version>
+            <scope>compile</scope>
         </dependency>
-
-        <!-- Parameterized Tests -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.jupiter.version}</version>
         </dependency>
-
-        <!-- Test engine(s) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.jupiter.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>6.15.0</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5 -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
-            <version>${allure.version}</version>
-        </dependency>
-
-        <!--Для скринов-->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.4</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-selenide -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-selenide</artifactId>
-            <version>${allure.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-commons</artifactId>
+            <version>${junit.platform.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${qameta.allure.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${com.codeborne.selenide.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-selenide</artifactId>
+            <version>${qameta.allure.allure-selenide.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${com.fasterxml.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${com.fasterxml.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${org.mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${org.apache.kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.atlas</groupId>
+            <artifactId>atlas-webdriver</artifactId>
             <version>1.9.2</version>
         </dependency>
     </dependencies>
@@ -77,7 +135,7 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.12.0</version>
+                <version>2.10.0</version>
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
                     <resultsDirectory>${basedir}/allure-results</resultsDirectory>
@@ -87,22 +145,19 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.8.1</version>
                 <configuration>
-                    <source>9</source>
-                    <target>9</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.0.0-M5</version>
                 <configuration>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                        -Dselenide.headless=true
-                        -Dselenide.ignore-ssl-errors=yes
-                        -Dselenide.disable-dev-shm-usage=yes
                     </argLine>
                 </configuration>
                 <dependencies>
@@ -115,6 +170,7 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
 
 

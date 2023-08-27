@@ -10,19 +10,6 @@ public class QaAutomationTestPageTests extends BrowserSettings {
     public final String page = "https://docs.google.com/forms/d/1dgFKz9AD32hq326wnGaeFw6YccoNuzxwdVPFVb4UeXE/viewform?edit_requested=true";
     public final String eMail = "test4545@mail.ru";
 
-    @Step("Предусловия")
-    @BeforeEach
-    public void precondition() {
-        System.out.println("test");
-    }
-
-    @Step("Постусловия")
-    @AfterEach
-    public void aftercondition() {
-        System.out.println("test");
-    }
-
-
     @AllureId("0000001")
     @Test
     @Description("Проверка формы ")
