@@ -17,7 +17,7 @@ public class BrowserSettings {
     public void startBrowser() {
 
 
-        Configuration.remote = "http://localhost:4444/wd/hub";
+        Configuration.remote = "http://localhost:4444/";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
